@@ -471,7 +471,7 @@ They are suitable for practical assignments, examination preparation, and viva p
 
 ## 👨‍💻 Author
 
-**Data Mining Practical Work**
+**Laxmi Narayan Verma**
 
 ---
 
