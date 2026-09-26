@@ -2,7 +2,7 @@
 
 This repository contains Python programs and datasets for Data Mining practicals.
 
-The practicals cover data cleaning, data preprocessing, random dataset generation, and basic data analysis using Python.
+The practicals cover data cleaning, data preprocessing, dataset generation, association rule mining, K-Means clustering, and basic data analysis using Python.
 
 ---
 
@@ -19,7 +19,7 @@ The dataset contains:
 - Surname
 - Marks of 5 subjects
 
-Marks are randomly generated between 0 and 50.
+Marks are randomly generated between **0 and 50**.
 
 The program performs:
 
@@ -29,6 +29,8 @@ The program performs:
 - Finding the overall class topper
 - Finding subject-wise toppers
 - Finding students who scored less than 15 in any subject
+
+---
 
 ### Practical 2 – Data Cleaning
 
@@ -44,9 +46,20 @@ The program handles:
 - Invalid marks
 - Basic validation rules
 
+#### Techniques Used
+
+- Handling missing values using mean values
+- Standardizing inconsistent categorical values
+- Detecting and handling outliers
+- Validating marks within a valid range
+
+---
+
 ### Practical 3 – Data Pre-processing
 
-This practical demonstrates common data preprocessing techniques:
+This practical demonstrates common data preprocessing techniques.
+
+The following techniques are implemented:
 
 - Normalization
 - Standardization
@@ -55,6 +68,140 @@ This practical demonstrates common data preprocessing techniques:
 - Discretization
 - Binarization
 - Sampling
+
+#### Normalization
+
+Converts values into a range between 0 and 1.
+
+Formula:
+
+```text
+(x - minimum) / (maximum - minimum)
+```
+
+#### Standardization
+
+Scales values using mean and standard deviation.
+
+Formula:
+
+```text
+(x - mean) / standard deviation
+```
+
+#### Transformation
+
+Changes the representation of data, such as converting income into thousands.
+
+#### Aggregation
+
+Combines values to calculate useful summaries such as average marks and total income.
+
+#### Discretization
+
+Converts continuous values into categories such as Young, Adult, and Senior.
+
+#### Binarization
+
+Converts values into 0 and 1.
+
+Example:
+
+```text
+Marks >= 50 → 1 (Pass)
+Marks < 50  → 0 (Fail)
+```
+
+#### Sampling
+
+Selects a smaller random subset of records from the dataset.
+
+---
+
+### Practical 4 – Association Rule Mining
+
+This practical works with a transactional dataset from an electronic store.
+
+The transactions, itemsets, and association rules are predefined according to the practical question.
+
+The program calculates:
+
+- Support of given itemsets
+- Support of association rules
+- Confidence of association rules
+
+The results are displayed in tabular format using Pandas.
+
+#### Support
+
+Support measures how frequently an itemset occurs in the complete transaction dataset.
+
+Formula:
+
+```text
+Support(X) =
+(Number of transactions containing X / Total number of transactions) × 100
+```
+
+#### Confidence
+
+Confidence measures how frequently the consequent occurs when the antecedent occurs.
+
+Formula:
+
+```text
+Confidence(A → B) =
+Support(A ∪ B) / Support(A) × 100
+```
+
+Example association rule:
+
+```text
+Laptop → Mouse
+```
+
+No external CSV file is required for this practical because the transactions, itemsets, and rules are provided directly in the Python program.
+
+---
+
+### Practical 5 – K-Means Clustering
+
+This practical demonstrates the K-Means clustering algorithm by implementing the algorithm using Python, NumPy, and Matplotlib.
+
+#### Question 1 – One-Dimensional K-Means
+
+The program:
+
+- Generates 20 random one-dimensional points
+- Asks the user to enter the value of K
+- Selects initial centroids
+- Assigns each point to the nearest centroid
+- Calculates new centroids
+- Repeats the process until convergence
+- Displays the final clusters and centroids
+
+#### Question 2 – K-Means with Different Parameters
+
+The program applies K-Means clustering to a two-dimensional dataset and compares the results by varying the value of K.
+
+The program:
+
+- Runs K-Means for different K values
+- Calculates MSE after every iteration
+- Displays final centroids
+- Displays the number of iterations
+- Compares clustering results
+- Plots a line graph showing MSE versus iteration
+
+#### Mean Squared Error (MSE)
+
+MSE is used to measure the clustering error.
+
+```text
+MSE =
+Sum of squared distances from points to their centroids
+/ Number of points
+```
 
 ---
 
@@ -71,9 +218,18 @@ Data Mining/
 │   ├── data_cleaning.py
 │   └── data_cleaning_dataset.csv
 │
-└── Practical-3/
-    ├── data_preprocessing.py
-    └── preprocessing_dataset.csv
+├── Practical-3/
+│   ├── data_preprocessing.py
+│   └── preprocessing_dataset.csv
+│
+├── Practical-4/
+│   └── association_rules.py
+│
+├── Practical-5/
+│   ├── kmeans_1d.py
+│   └── kmeans_dataset.py
+│
+└── README.md
 ```
 
 ---
@@ -83,6 +239,7 @@ Data Mining/
 - Python
 - Pandas
 - NumPy
+- Matplotlib
 - CSV
 
 ---
@@ -91,17 +248,17 @@ Data Mining/
 
 Make sure Python is installed on your system.
 
-Install the required libraries:
+Install the required libraries using:
 
 ```bash
-pip install pandas numpy
+pip install pandas numpy matplotlib
 ```
 
 ---
 
 ## ▶️ How to Run
 
-Open the project in VS Code or any Python-supported IDE.
+Open the project folder in VS Code or any Python-supported IDE.
 
 ### Practical 1
 
@@ -110,7 +267,13 @@ cd Practical-1
 python student_dataset.py
 ```
 
-The program generates/updates `student_dataset_200.csv`.
+The program creates or updates:
+
+```text
+student_dataset_200.csv
+```
+
+---
 
 ### Practical 2
 
@@ -119,7 +282,15 @@ cd Practical-2
 python data_cleaning.py
 ```
 
-The program reads `data_cleaning_dataset.csv` and displays the cleaned dataset.
+The program reads:
+
+```text
+data_cleaning_dataset.csv
+```
+
+and displays the cleaned dataset.
+
+---
 
 ### Practical 3
 
@@ -128,13 +299,53 @@ cd Practical-3
 python data_preprocessing.py
 ```
 
-The program reads `preprocessing_dataset.csv` and performs the preprocessing techniques.
+The program reads:
+
+```text
+preprocessing_dataset.csv
+```
+
+and performs the required preprocessing techniques.
 
 ---
 
-## 📊 Practical 1 – Dataset
+### Practical 4
 
-The student dataset contains 200 records.
+```bash
+cd Practical-4
+python association_rules.py
+```
+
+The program uses the transactions, itemsets, and association rules given in the practical question and displays support and confidence in tabular format.
+
+No external CSV file is required.
+
+---
+
+### Practical 5
+
+For one-dimensional K-Means:
+
+```bash
+cd Practical-5
+python kmeans_1d.py
+```
+
+The program generates 20 random one-dimensional points and asks the user to enter the value of K.
+
+For K-Means with different parameters and MSE graph:
+
+```bash
+python kmeans_dataset.py
+```
+
+The program applies K-Means for different K values, calculates MSE after each iteration, and displays the MSE graph.
+
+---
+
+## 📊 Practical 1 – Dataset Information
+
+The student dataset contains **200 records**.
 
 | Column | Description |
 |---|---|
@@ -175,80 +386,86 @@ Marks are validated to ensure that they fall between 0 and 100.
 
 ## ⚙️ Practical 3 – Data Pre-processing
 
-### Normalization
+The preprocessing practical demonstrates how raw data can be transformed into a suitable form for analysis and data mining.
 
-Converts values into a range between 0 and 1.
+The techniques include normalization, standardization, transformation, aggregation, discretization, binarization, and sampling.
 
-Formula:
+---
 
-```text
-(x - minimum) / (maximum - minimum)
-```
+## 🔗 Practical 4 – Association Rule Mining
 
-### Standardization
+Association rule mining is used to identify relationships between items in transactional data.
 
-Scales values using mean and standard deviation.
+The practical uses:
 
-Formula:
+- Transactions
+- Itemsets
+- Association rules
+- Support calculation
+- Confidence calculation
 
-```text
-(x - mean) / standard deviation
-```
-
-### Transformation
-
-Changes the representation of data, such as converting income into thousands.
-
-### Aggregation
-
-Combines values to calculate useful summaries such as average marks and total income.
-
-### Discretization
-
-Converts continuous values into categories such as Young, Adult, and Senior.
-
-### Binarization
-
-Converts values into 0 and 1. For example:
+Example:
 
 ```text
-Marks >= 50 → 1 (Pass)
-Marks < 50  → 0 (Fail)
+Laptop → Mouse
 ```
 
-### Sampling
+The results are displayed in a structured tabular format.
 
-Selects a smaller random subset of records from the dataset.
+---
+
+## 📈 Practical 5 – K-Means Clustering
+
+K-Means is an unsupervised learning algorithm used to divide data points into a predefined number of clusters.
+
+The basic steps are:
+
+1. Select the value of K.
+2. Select initial centroids.
+3. Calculate the distance between each point and every centroid.
+4. Assign each point to its nearest centroid.
+5. Calculate new centroids.
+6. Repeat until the centroids converge.
+
+The second part of the practical also calculates MSE after every iteration and visualizes the change in MSE using Matplotlib.
 
 ---
 
 ## 🎯 Learning Outcomes
 
-These practicals provide hands-on understanding of:
+After completing these practicals, the following concepts can be understood:
 
 - Creating datasets using Python
 - Reading and writing CSV files
 - Working with Pandas DataFrames
 - Handling missing data
 - Handling inconsistent data
-- Handling outliers
+- Identifying and handling outliers
 - Applying validation rules
 - Normalizing data
 - Standardizing data
 - Transforming data
 - Aggregating data
-- Discretizing data
+- Discretizing continuous data
 - Binarizing data
-- Sampling data
+- Performing random sampling
+- Calculating support and confidence
+- Understanding association rules
+- Implementing K-Means clustering
+- Calculating clustering error using MSE
+- Comparing clustering results
+- Visualizing results using Matplotlib
 - Performing basic data analysis
 
 ---
 
 ## 🎓 Academic Purpose
 
-This repository is created for academic learning and practical implementation of basic Data Mining concepts using Python.
+This repository is created for academic learning and practical implementation of Data Mining concepts using Python.
 
-The programs are kept simple so that the concepts can be easily understood and explained during practical examinations and viva.
+The programs are kept simple and focused on understanding the implementation of common Data Mining algorithms and data preprocessing techniques.
+
+They are suitable for practical assignments, examination preparation, and viva practice.
 
 ---
 
@@ -260,6 +477,6 @@ The programs are kept simple so that the concepts can be easily understood and e
 
 ## ⭐ Conclusion
 
-These practicals demonstrate how Python can be used to create, clean, preprocess, and analyze datasets.
+These practicals demonstrate how Python can be used to create, clean, preprocess, analyze, and cluster datasets.
 
-They provide a basic foundation for understanding data preparation and analysis techniques used in Data Mining.
+The repository provides a basic foundation for understanding data preparation, association rule mining, clustering, and data analysis techniques used in Data Mining.
