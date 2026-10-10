@@ -1,0 +1,9 @@
+eps,min_samples,cluster_count_excluding_noise,noise_count,noise_percentage,non_noise_record_count,cluster_size_distribution,silhouette_score,silhouette_points,silhouette_status,limitation_or_invalid_case
+1.0,5,3,267,31.976047904191617,568,"{""0"": 554, ""1"": 9, ""2"": 5}",0.46557654496530076,non-noise records only,valid; calculated on non-noise records only,none beyond noise-excluded silhouette limitations
+1.5,5,6,136,16.2874251497006,699,"{""0"": 658, ""1"": 8, ""2"": 14, ""3"": 9, ""4"": 5, ""5"": 5}",0.09610840619776848,non-noise records only,valid; calculated on non-noise records only,none beyond noise-excluded silhouette limitations
+2.0,5,1,81,9.70059880239521,754,"{""0"": 754}",,not calculated,undefined: fewer than two non-noise clusters,one non-noise cluster; silhouette undefined
+2.5,5,1,44,5.269461077844311,791,"{""0"": 791}",,not calculated,undefined: fewer than two non-noise clusters,one non-noise cluster; silhouette undefined
+1.0,10,1,311,37.24550898203593,524,"{""0"": 524}",,not calculated,undefined: fewer than two non-noise clusters,one non-noise cluster; silhouette undefined
+1.5,10,2,189,22.634730538922156,646,"{""0"": 633, ""1"": 13}",0.45237815140355075,non-noise records only,valid; calculated on non-noise records only,none beyond noise-excluded silhouette limitations
+2.0,10,1,90,10.778443113772456,745,"{""0"": 745}",,not calculated,undefined: fewer than two non-noise clusters,one non-noise cluster; silhouette undefined
+2.5,10,1,48,5.748502994011976,787,"{""0"": 787}",,not calculated,undefined: fewer than two non-noise clusters,one non-noise cluster; silhouette undefined

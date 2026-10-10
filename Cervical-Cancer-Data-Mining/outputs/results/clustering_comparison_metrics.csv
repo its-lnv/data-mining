@@ -1,0 +1,14 @@
+method,k,best_initialization,eps,min_samples,kmeans_sse_inertia_method_specific,record_count,cluster_count_excluding_noise,cluster_size_distribution,cluster_size_min_max_ratio,cluster_size_normalized_entropy,clustered_record_count,coverage_percentage,noise_count,noise_percentage,silhouette_score,silhouette_records,silhouette_record_count,silhouette_status
+K-Means,2.0,2.0,,,6454.529043090031,835,2,"{""0"": 49, ""1"": 786}",0.062340966921119595,0.3221931213291872,835,100.0,0,0.0,0.506261529912178,all rows,835,valid
+K-Means,3.0,2.0,,,5565.739583187386,835,3,"{""0"": 300, ""1"": 495, ""2"": 40}",0.08080808080808081,0.7494042908739975,835,100.0,0,0.0,0.23194542907719423,all rows,835,valid
+K-Means,4.0,4.0,,,4947.96081994067,835,4,"{""0"": 474, ""1"": 48, ""2"": 28, ""3"": 285}",0.05907172995780591,0.697084697327502,835,100.0,0,0.0,0.25851381783087746,all rows,835,valid
+K-Means,5.0,8.0,,,4386.017491402732,835,5,"{""0"": 453, ""1"": 33, ""2"": 274, ""3"": 28, ""4"": 47}",0.06181015452538632,0.6840383024004184,835,100.0,0,0.0,0.2583745507633185,all rows,835,valid
+K-Means,6.0,8.0,,,3969.921788192102,835,6,"{""0"": 47, ""1"": 430, ""2"": 90, ""3"": 32, ""4"": 28, ""5"": 208}",0.06511627906976744,0.7416687648874446,835,100.0,0,0.0,0.26015180433890883,all rows,835,valid
+DBSCAN,,,1.0,5.0,,835,3,"{""0"": 554, ""1"": 9, ""2"": 5}",0.009025270758122744,0.1198591453222225,568,68.02395209580838,267,31.976047904191617,0.46557654496530076,non-noise rows only,568,valid
+DBSCAN,,,1.0,10.0,,835,1,"{""0"": 524}",1.0,0.0,524,62.75449101796408,311,37.24550898203593,,non-noise rows only,524,undefined: fewer than two clusters in scored rows
+DBSCAN,,,1.5,5.0,,835,6,"{""0"": 658, ""1"": 8, ""2"": 14, ""3"": 9, ""4"": 5, ""5"": 5}",0.007598784194528876,0.1747447475601171,699,83.7125748502994,136,16.2874251497006,0.09610840619776848,non-noise rows only,699,valid
+DBSCAN,,,1.5,10.0,,835,2,"{""0"": 633, ""1"": 13}",0.020537124802527645,0.14213529936269542,646,77.36526946107784,189,22.634730538922156,0.45237815140355075,non-noise rows only,646,valid
+DBSCAN,,,2.0,5.0,,835,1,"{""0"": 754}",1.0,0.0,754,90.2994011976048,81,9.70059880239521,,non-noise rows only,754,undefined: fewer than two clusters in scored rows
+DBSCAN,,,2.0,10.0,,835,1,"{""0"": 745}",1.0,0.0,745,89.22155688622755,90,10.778443113772456,,non-noise rows only,745,undefined: fewer than two clusters in scored rows
+DBSCAN,,,2.5,5.0,,835,1,"{""0"": 791}",1.0,0.0,791,94.73053892215569,44,5.269461077844311,,non-noise rows only,791,undefined: fewer than two clusters in scored rows
+DBSCAN,,,2.5,10.0,,835,1,"{""0"": 787}",1.0,0.0,787,94.25149700598803,48,5.748502994011976,,non-noise rows only,787,undefined: fewer than two clusters in scored rows
