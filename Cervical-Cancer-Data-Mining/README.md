@@ -81,7 +81,8 @@ Cervical-Cancer-Data-Mining/
 │   ├── kmeans_experiment.py
 │   ├── dbscan_experiment.py
 │   ├── compare_clustering.py
-│   └── render_final_report_pdf.py
+│   ├── render_final_report_pdf.py
+│   └── render_final_report_docx.py
 ├── requirements.txt
 ├── run_project.py
 └── README.md
@@ -149,6 +150,7 @@ flowchart TD
 | `src/data_preprocessing.py` | Reads raw CSV for guarded readiness checks for the unimplemented classification alternative | Console only; intentionally exits with code 2 and writes no data | No |
 | `src/clustering_readiness.py` | Reads raw CSV and describes candidate feature properties without transforming data | `docs/clustering_feature_readiness.md` | No; separate |
 | `src/render_final_report_pdf.py` | Reads final Markdown report and referenced graphs; standard-library export that calls installed Edge or Chrome | `outputs/submission/Cervical_Cancer_Data_Mining_Report.html` and .pdf | No; optional |
+| `src/render_final_report_docx.py` | Converts the final Markdown report, tables, links, and PNG figures to DOCX using Python's standard library | `outputs/submission/Cervical_Cancer_Data_Mining_Report.docx` | No; optional |
 
 `run_project.py` is the orchestrator. It checks the Python minimum and required imports, invokes the five automatic scripts, and writes `outputs/results/workflow_run_manifest.md` after success. It contains no algorithm implementation.
 
@@ -256,6 +258,7 @@ python src/kmeans_experiment.py
 python src/dbscan_experiment.py
 python src/compare_clustering.py
 python src/render_final_report_pdf.py
+python src/render_final_report_docx.py
 ```
 
 The exploratory visualization script is separate from the five-step runner and refreshes seven raw-data figures. Run preprocessing before either clustering experiment if the matrix is absent or needs regeneration. Run both experiments before comparison. The classification readiness check intentionally exits with code 2 while its configuration is unset; it does not create a dataset.
@@ -265,12 +268,13 @@ The exploratory visualization script is separate from the five-step runner and r
 - [Final Markdown report](docs/final_project_report.md)
 - [Submission PDF](outputs/submission/Cervical_Cancer_Data_Mining_Report.pdf)
 - [HTML report](outputs/submission/Cervical_Cancer_Data_Mining_Report.html)
+- [Word report](outputs/submission/Cervical_Cancer_Data_Mining_Report.docx)
 - [Viva questions](docs/viva_questions.md)
 - [Demo script](docs/demo_script.md)
 - [Submission checklist](docs/submission_checklist.md)
 - [Presentation outline](docs/presentation_outline.md)
 
-The presentation outline is Markdown; no PPTX or DOCX is present. Processed data and experiment reports are described in the sections above.
+The presentation outline is Markdown; no PPTX is present. The Word report can be regenerated from the final Markdown report with `python src/render_final_report_docx.py`. Processed data and experiment reports are described in the sections above.
 
 ## Results and graphs
 
